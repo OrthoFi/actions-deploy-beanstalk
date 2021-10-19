@@ -75,3 +75,4 @@ runs:
       with:
         environment: ${{ inputs.app-env-name }}
         version: ${{ github.sha }}
+        ignore_empty: true
