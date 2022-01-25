@@ -61,7 +61,7 @@ runs:
           -env ${{ inputs.app-name }}-api-${{ inputs.app-env-name }} \
           -pac beanstalk.zip \
           --version-label GHA-${{ github.run_number }} \
-          --additional-options "aws:elasticbeanstalk:application:environment,SENTRY_RELEASE=${{ github.sha }}" \
+          --additional-options "aws:elasticbeanstalk:application:environment,SENTRY_RELEASE=${{ github.sha }};aws:elasticbeanstalk:application:environment,DD_VERSION=sha-${{ github.sha }}" \
           --disable-interactive true \
           --wait true
 
